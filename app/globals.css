@@ -2,26 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Box sizing rules */
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Remove default padding */
+body,
+ol,
+ul {
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Remove default quote styles */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* Remove default quote styles for blockquote */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Remove default styles for table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default border */
+img,
+iframe {
+  border: 0;
+}
+
+/* Remove default outline styles */
+:focus {
+  outline: 0;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
 }
