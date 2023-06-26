@@ -1,7 +1,5 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Providers from "./providers";
 
 export const metadata = {
   title: "JavaScript Journeys: Exploring the Realm of Code and Creativity",
@@ -12,10 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <body className={inter.className}>{children}</body>
-      </head>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
