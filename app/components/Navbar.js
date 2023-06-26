@@ -7,8 +7,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Image src="/logo.jpg" width={50} height={50} alt="Logo" />
-            <Link href="/" className="text-white p-4 font-bold text-lg">
+            <Link
+              href="/"
+              className="text-white p-4 gap-4 font-bold text-lg flex flex-row items-center"
+            >
+              <Image src="/logo.jpg" width={50} height={50} alt="Logo" />
               JavaScript Journeys
             </Link>
           </div>

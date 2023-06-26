@@ -7,9 +7,11 @@ import { useEffect, useState } from "react";
 
 const client = new Client();
 
-client
-  .setEndpoint("https://cloud.appwrite.io/v1")
-  .setProject("6489c0eba659e78d6de7");
+const DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABSE_ID;
+const COLLECTION_ID = process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID;
+const PROJECT_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
+
+client.setEndpoint("https://cloud.appwrite.io/v1").setProject(PROJECT_ID);
 
 const BlogPage = ({ params }) => {
   const [blogPost, setBlogPost] = useState();
@@ -20,11 +22,9 @@ const BlogPage = ({ params }) => {
       "JavaScript Journeys: Exploring the Realm of Code and Creativity";
     const databases = new Databases(client);
 
-    let promise = databases.listDocuments(
-      "6489c8e51f9e6e274f12",
-      "6489c8ed5238714db94b",
-      [Query.equal("slug", slug)]
-    );
+    let promise = databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
+      Query.equal("slug", slug),
+    ]);
 
     promise.then(
       function (response) {

@@ -46,9 +46,11 @@ export default function Home() {
                   alt={post.title}
                   className="w-full h-48 object-cover mb-4"
                 />
-                <h2 className="text-xl font-bold mb-2">{post.title}</h2>
+                <h2 className="text-xl font-bold mb-2">
+                  {post.title.slice(0, 60)}...
+                </h2>
               </Link>
-              <p className="text-gray-600">{post.metadesc}</p>
+              <p className="text-gray-600">{post.metadesc.slice(0, 100)}...</p>
               <Link
                 href={`/blog/${post.slug}`}
                 className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"
