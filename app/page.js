@@ -33,17 +33,13 @@ export default function Home() {
       }
     );
   }, []);
-
   return (
     <>
       <Navbar />
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogPosts.map((post) => (
-            <div
-              key={post.slug}
-              className="bg-white dark:bg-black shadow-md p-4"
-            >
+            <div key={post.slug} className="bg-white shadow-md p-4">
               <Link href={`/blog/${post.slug}`}>
                 <img
                   src={post.url}
@@ -54,9 +50,7 @@ export default function Home() {
                   {post.title.slice(0, 60)}...
                 </h2>
               </Link>
-              <p className="text-gray-600 dark:text-gray-300">
-                {post.metadesc.slice(0, 100)}...
-              </p>
+              <p className="text-gray-600">{post.metadesc.slice(0, 100)}...</p>
               <Link
                 href={`/blog/${post.slug}`}
                 className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded"

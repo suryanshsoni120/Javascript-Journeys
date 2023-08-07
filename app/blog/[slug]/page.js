@@ -49,7 +49,7 @@ const BlogPage = ({ params }) => {
           />
         </div>
         <p
-          className="text-gray-700 dark:text-gray-300 pb-5"
+          className="text-gray-700 pb-5"
           dangerouslySetInnerHTML={{ __html: blogPost?.content }}
         />
       </div>
